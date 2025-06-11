@@ -52,6 +52,10 @@ var (
 
 /* --[[ Structs ]]-- */
 
+type APIKey struct {
+	Key string
+}
+
 type AppInformation struct {
 	AppID uint32
 }
