@@ -26,7 +26,7 @@ func main() {
 	fmt.Println("User:", Toakley682)
 	fmt.Println("Context:", Context)
 
-	TF2.GetLatestNewsForApp(3, 300)
+	TF2.GetLatestNewsForApp(6, 300)
 	TF2.GetGlobalAchievementsForApp()
 	TF2.GetAssetPrices()
 

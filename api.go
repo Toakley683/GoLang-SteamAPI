@@ -496,20 +496,22 @@ func (Client *ClientInformation) GetGameStats(app AppInformation) (*PlayerStats,
 
 /* --[[ Request Owned Games for User ]]-- */
 
+type PlayerGame struct {
+	AppID                int `json:"appid"`
+	Playtime             int `json:"playtime_forever"`
+	PlaytimeOnWindows    int `json:"playtime_windows_forever"`
+	PlaytimeOnMac        int `json:"playtime_mac_forever"`
+	PlaytimeOnLinux      int `json:"playtime_linux_forever"`
+	PlaytimeOnSteamDeck  int `json:"playtime_deck_forever"`
+	TimeLastPlayed       int `json:"rtime_last_played"`
+	PlaytimePast2Weeks   int `json:"playtime_2weeks,omitempty"`
+	PlaytimeDisconnected int `json:"playtime_disconnected"`
+}
+
 type PlayerGamesList struct {
 	Data struct {
-		GameCount int `json:"game_count"`
-		Games     []struct {
-			AppID                int `json:"appid"`
-			Playtime             int `json:"playtime_forever"`
-			PlaytimeOnWindows    int `json:"playtime_windows_forever"`
-			PlaytimeOnMac        int `json:"playtime_mac_forever"`
-			PlaytimeOnLinux      int `json:"playtime_linux_forever"`
-			PlaytimeOnSteamDeck  int `json:"playtime_deck_forever"`
-			TimeLastPlayed       int `json:"rtime_last_played"`
-			PlaytimePast2Weeks   int `json:"playtime_2weeks,omitempty"`
-			PlaytimeDisconnected int `json:"playtime_disconnected"`
-		} `json:"games"`
+		GameCount int          `json:"game_count"`
+		Games     []PlayerGame `json:"games"`
 	} `json:"response"`
 }
 
