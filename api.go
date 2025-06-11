@@ -1,4 +1,4 @@
-package SteamAPI
+package steamapi
 
 import (
 	"encoding/json"
